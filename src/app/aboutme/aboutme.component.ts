@@ -26,6 +26,6 @@ export class AboutmeComponent {
     this.demoButtonColor = this.showDemoMessage ? '#3b82f6' : '#ef4444';
   }
   showTolls(){
-this.toshoW = !this.toshoW
+    this.toshoW = !this.toshoW
   }
 }
