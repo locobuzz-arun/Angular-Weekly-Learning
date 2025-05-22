@@ -1,11 +1,31 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   standalone: true,
   selector: 'app-aboutme',
+  imports:[CommonModule],
   templateUrl: './aboutme.component.html',
   styleUrls: ['./aboutme.component.css']
 })
 export class AboutmeComponent {
-  demo : String ="";
+  demo: string = "Explore my skills and projects!";
+  showDemoMessage: boolean = true;
+  demoButtonColor: string = '#3b82f6';
+  toshoW : boolean = false
+
+  skills = [
+    { category: 'Frontend', items: ['HTML', 'CSS', 'Angular'] },
+    { category: 'Backend', items: ['C#', 'ASP.NET Web API'] },
+    { category: 'Database', items: ['SQL Server', 'MySQL'] },
+    { category: 'Tools', items: ['Git', 'Postman', 'Visual Studio'] }
+  ];
+
+  toggleDemoMessage() {
+    this.showDemoMessage = !this.showDemoMessage;
+    this.demoButtonColor = this.showDemoMessage ? '#3b82f6' : '#ef4444';
+  }
+  showTolls(){
+this.toshoW = !this.toshoW
+  }
 }
