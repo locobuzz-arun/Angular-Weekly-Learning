@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="box">
+        <div class="firstword">
+            LOGIN
+        </div>
+        <form class="login-form">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input 
+                    id="email" 
+                    type="email" 
+                    placeholder="Enter your email" 
+                    class="input-field"
+                >
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <div class="password-container">
+                    <input 
+                        id="password" 
+                        [type]="showPassword ? 'text' : 'password'" 
+                        placeholder="Enter your password" 
+                        class="input-field"
+                    >
+                    <button 
+                        type="button" 
+                        class="show-password-btn" 
+                        (click)="toggleShowPassword()"
+                    >
+                        <mat-icon>{{ showPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+                    </button>
+                </div>
+            </div>
+            <div class="forgot-password">
+                <a href="#">Forgot Password?</a>
+            </div>
+            <div class="button-group">
+                <button type="submit" class="submit-btn">Login</button>
+                <button type="button" class="signup-btn">Signup</button>
+            </div>
+        </form>
+    </div>
+</div>
