@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-
 @Component({
   standalone: true,
   selector: 'app-login',
@@ -10,7 +9,6 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class LoginComponent {
   showPassword: boolean = false;
-
   toggleShowPassword() {
     this.showPassword = !this.showPassword;
   }

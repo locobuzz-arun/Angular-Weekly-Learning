@@ -1,9 +1,8 @@
-<div class="container mx-auto px-4 py-8 max-w-4xl">
-  <header class="text-center mb-12">
-    
-    <button (click)="showTolls()" *ngIf="toshoW==false">Show Full name</button>
-    <h1 class="text-4xl font-bold text-gray-800 mb-4 ">Hello! I'm Arun 
-      <span *ngIf="toshoW" >  Karthik V </span></h1>
+<div class="container">
+  <header class="text-center mb-12">    
+    <button (click)="showTolls()" *ngIf="toshoW==false">Click to see My Name</button>
+    <h1 class="text-4xl font-bold text-gray-800 mb-4 "> 
+      <span *ngIf="toshoW" >Hello! I'm Arun  Karthik V </span></h1>
     <p class="text-lg text-gray-600 max-w-2xl mx-auto">
       I'm a passionate web developer with a love for creating clean, user-friendly applications. 
       I enjoy solving logical problems and building backend services that scale.
@@ -14,7 +13,7 @@
     </p>
   </header>
 
-  <div class="skills bg-gray-100 p-8 rounded-lg shadow-lg">
+  <div class="skills">
     <h2 class="text-2xl font-semibold text-gray-800 mb-6">Skills</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
       <div *ngFor="let skill of skills; let i = index" 
@@ -26,6 +25,16 @@
         </ul>
       </div>
     </div>
-
   </div>
+  <div class="mb-10">
+    <label for="userInput">
+    Type something which you are thinking about me after seeing my portfolio:
+  </label>
+  <input id="userInput" [(ngModel)]="typedText" placeholder="Start typing..." 
+         class="w-full p-2 border border-gray-300 rounded-md mb-3" />
+  <p class="text-gray-700 text-lg">You typed: <span class="font-semibold">{{ typedText }}</span></p>
+</div>
+<button class="demobutton">
+    Submit
+</button>
 </div>
