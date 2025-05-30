@@ -33,8 +33,8 @@
   <input id="userInput" [(ngModel)]="typedText" placeholder="Start typing..." 
          class="w-full p-2 border border-gray-300 rounded-md mb-3" />
   <p class="text-gray-700 text-lg">You typed: <span class="font-semibold">{{ typedText }}</span></p>
+  <p>Here is my Signal Value : {{mytypedTextWithSignal()}}</p>
 </div>
-<button class="demobutton">
-    Submit
-</button>
+<button class="demobutton" (click)="onSubmit()" [disabled]="!typedText.trim()">Submit</button>
+<p *ngIf="submitted" class="text-green-600 font-medium mt-3">Thanks for submitting</p>
 </div>

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -15,6 +15,7 @@ export class AboutmeComponent {
   demoButtonColor: string = '#3b82f6';
   toshoW : boolean = false
   typedText: string = '';
+  mytypedTextWithSignal = signal('Some Value');
   skills = [
     { category: 'Frontend', items: ['HTML', 'CSS', 'Angular'] },
     { category: 'Backend', items: ['C#', 'ASP.NET Web API'] },
@@ -28,4 +29,8 @@ export class AboutmeComponent {
   showTolls(){
     this.toshoW = !this.toshoW
   }
+  submitted: boolean = false;
+  onSubmit() {
+  this.submitted = true;
+}
 }

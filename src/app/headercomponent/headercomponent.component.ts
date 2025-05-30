@@ -9,5 +9,4 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./headercomponent.component.css']
 })
 export class HeadercomponentComponent {
-  constructor(private router: Router) {}
 }

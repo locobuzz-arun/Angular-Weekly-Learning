@@ -1,0 +1,30 @@
+<div class="form-container">
+  <h2>Form regarding my Profile</h2>
+  <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+    <label for="name">Name</label>
+    <input id="name" name="name" type="text" [(ngModel)]="formData.name" required pattern="^[a-zA-Z]+$" #name = "ngModel"/>
+    <div *ngIf="name.invalid && name.touched" class="error">
+      <div *ngIf="name.errors?.['pattern']">Enter a valid name</div>
+      <div *ngIf="name.errors?.['required']">Name is required.</div>
+     </div>
+    
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" [(ngModel)]="formData.email" required email #email="ngModel"/>
+     <div *ngIf="email.invalid && email.touched" class="error">
+      <div *ngIf="email.errors?.['required']">Email is required.</div>
+      <div *ngIf="email.errors?.['email']">Enter a valid email.</div>
+     </div>
+
+    <label for="phone">Phone Number</label>
+    <input id="phone" name="phone" type="tel" [(ngModel)]="formData.phone" required tel pattern="^[0-9]{10}$" #tel = "ngModel"/>
+    <div *ngIf="tel.invalid && tel.touched" class="error">
+      <div *ngIf="tel.errors?.['required']">Phone number is required</div>
+      <div *ngIf="tel.errors?.['pattern']">Enter a valid Phone number.</div>
+     </div>
+
+    <label for="comments">Comments</label>
+    <textarea id="comments" name="comments" rows="4" [(ngModel)]="formData.comments" required></textarea>
+
+    <button type="submit" [disabled]="!contactForm.form.valid">Submit</button>
+  </form>
+</div>
