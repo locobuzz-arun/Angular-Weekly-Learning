@@ -17,7 +17,7 @@ export class FormComponent {
   };
 
   onSubmit() {
-    console.log('Form submitted:', this.formData);
+    //console.log('Form submitted:', this.formData);
     alert('Form submitted thanks a lot');
   }
 }
